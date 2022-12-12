@@ -22,13 +22,13 @@ MSM/MDM+WTR RF Frontend(MIPI)结构
 
 ### 2.1 Step1 ASM设备驱动
 
-文件路径：AMSS_LE20/modem_proc/rfdevice_asm/src
+文件路径：`AMSS_LE20/modem_proc/rfdevice_asm/src`
 
 可以完成如下工作：
 
 1. 为已存在的ASM设备更改配置
 
-比如在rfdevice_asm_cxa4416gc_data_ag.h和rfdevice_asm_cxa4416gc_data_ag.cpp中为cxa4416gc修改配置。
+比如在`rfdevice_asm_cxa4416gc_data_ag.h`和`rfdevice_asm_cxa4416gc_data_ag.cpp`中为cxa4416gc修改配置。
 
 2. 添加一个新的ASM设备
 
