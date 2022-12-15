@@ -6,11 +6,13 @@
 
 
 
-## 1 原理
+## 1 需要的资料
 
-MSM/MDM+WTR RF Frontend(MIPI)结构
+1. 各个器件的datasheet
+2. 原理图
+3. 逻辑表（内容包含支持哪些制式、band，各个band用到哪些器件，需要哪些GPIO，GPIO配高还是配低等）
 
-
+**上诉由RF同事提供**
 
 ## 2 MIPI ASM Customization
 
@@ -32,7 +34,7 @@ MSM/MDM+WTR RF Frontend(MIPI)结构
 
 2. 添加一个新的ASM设备
 
-为一个新ASM设备添加.h和.cpp文件，.h和.cpp文件内容可以参考已经存在的其他设备的文件内容。
+为一个新ASM设备添加`.h和.cpp文件`，.h和.cpp文件内容可以参考已经存在的其他设备的文件内容。
 
 ![image-20221201173057200](https://wjx-pic.oss-cn-hangzhou.aliyuncs.com/images/image-20221201173057200.png)
 
@@ -120,23 +122,7 @@ static int16 rfdevice_asm_s5643_52_asm_trigger_data[RFDEVICE_ASM_S5643_52_NUM_PO
 
 **注意：**
 
-RFDEVICE_ASM_S5643_52_NUM_PORTS是端口的数量，不同的端口对应不同的频段开关。该数量与rfdevice_asm_s5643_52_asm_on_data列表中的寄存器数值是一致的。比如该值设置为6，那么与rfdevice_asm_s5643_52_asm_on_data肯定应该有6个数值。
-
-**表格1 S5643_52真值表**
-
-将这些值转换为16进制后，与代码modem_proc/rfdevice_asm/src/rfdevice_asm_s5643_52_data_ag.cpp中的rfdevice_asm_s5643_52_asm_on_data[]对应起来。
-
-
-
-**表格2 端口与真值对应关系表**
-
-这样在代码里面，就可以为gsm、wcdma、lte...，来选择ASM设备端口了。
-
-
-
-**表格3 ASM设备GSM配置表**
-
-
+> RFDEVICE_ASM_S5643_52_NUM_PORTS是端口的数量，不同的端口对应不同的频段开关。该数量与rfdevice_asm_s5643_52_asm_on_data列表中的寄存器数值是一致的。比如该值设置为6，那么与rfdevice_asm_s5643_52_asm_on_data肯定应该有6个数值。
 
 - 在.cpp文件中为ASM设备配置正确的MID、PID和product revision
 
