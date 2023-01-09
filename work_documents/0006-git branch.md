@@ -847,3 +847,20 @@ repo init -u git://codeaurora.org/quic/le/le/manifest.git -b release -m LE.UM.5.
 
 
 
+## 27-SIM8800 / SA515M
+
+```bash
+modem: git clone git@172.21.100.102:sunsea/modem/SA515M.git -b SA515M_LE21
+
+ap: repo init -u git@172.21.100.102:sunsea/le/platform/manifest.git -b SA515M_LE21
+```
+
+编译：
+
+```bash
+标准：build-SIM8800-LGA-images
+定制CV2X版本：build-SIM8800-LGA-CV2X-images
+```
+
+
+
