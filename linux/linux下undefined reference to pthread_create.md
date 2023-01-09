@@ -1,4 +1,4 @@
-# 00001-linux下出现undefined reference to `pthread_create' 
+# linux下出现undefined reference to pthread_create
 
 ## 问题
 
